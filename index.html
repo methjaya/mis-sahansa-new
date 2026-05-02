@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MGT6302 MIS – Complete Study Guide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f9f7f2; color: #1a1a1a; font-size: 15px; line-height: 1.7; }
+  .header { background: #1a1a2e; color: #e8e0d0; padding: 2rem 2rem 1.5rem; }
+  .header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  .header p { font-size: 14px; color: #a09880; margin-top: 6px; }
+  .lecturers { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+  .lec-badge { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: sans-serif; }
+  .lec-a { background: #2d4a7a; color: #b8d0f0; }
+  .lec-r { background: #3a2d6b; color: #c0b0f0; }
+  .lec-rj { background: #1e4d3a; color: #a0d4b8; }
+  .nav { background: #1a1a2e; border-top: 1px solid #2a2a4e; display: flex; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-btn { padding: 10px 18px; font-size: 13px; font-family: sans-serif; color: #8080a0; cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; flex-shrink: 0; }
+  .nav-btn:hover { color: #c0c0e0; }
+  .nav-btn.active { color: #fff; border-bottom-color: #6070d0; }
+  .panel { display: none; padding: 2rem; max-width: 860px; margin: 0 auto; }
+  .panel.active { display: block; }
+  h2 { font-size: 21px; color: #1a1a2e; margin: 1.5rem 0 0.8rem; border-bottom: 2px solid #d4c8a8; padding-bottom: 6px; }
+  h3 { font-size: 16px; color: #2d3a60; margin: 1.2rem 0 0.5rem; }
+  h4 { font-size: 14px; color: #3d3d3d; margin: 1rem 0 0.3rem; font-style: italic; }
+  p { margin-bottom: 0.8rem; }
+  .card { background: #fff; border: 1px solid #ddd8c8; border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1rem 0; }
+  .card-blue { border-left: 4px solid #4060c0; }
+  .card-green { border-left: 4px solid #2a7a4a; }
+  .card-amber { border-left: 4px solid #c08020; }
+  .card-red { border-left: 4px solid #b03030; }
+  .card-purple { border-left: 4px solid #6040a0; }
+  .mnemonic { background: #fffbe8; border: 1px solid #e8d880; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-family: sans-serif; font-size: 13px; }
+  .mnemonic strong { color: #704000; }
+  .tip { background: #f0f8f0; border: 1px solid #90c890; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-family: sans-serif; font-size: 13px; color: #1a4a1a; }
+  .warn { background: #fff0f0; border: 1px solid #e09090; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-family: sans-serif; font-size: 13px; color: #5a1010; }
+  .formula { background: #f0f0ff; border: 1px solid #8080c0; border-radius: 6px; padding: 10px 16px; margin: 8px 0; font-family: 'Courier New', monospace; font-size: 14px; color: #202060; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 10px 0; }
+  .box { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 10px 12px; font-family: sans-serif; font-size: 13px; }
+  .box-title { font-weight: 700; margin-bottom: 4px; font-size: 13px; }
+  .box-blue { border-top: 3px solid #4060c0; }
+  .box-green { border-top: 3px solid #2a7a4a; }
+  .box-amber { border-top: 3px solid #c08020; }
+  .box-red { border-top: 3px solid #b03030; }
+  .box-purple { border-top: 3px solid #6040a0; }
+  .box-teal { border-top: 3px solid #208070; }
+  ul { padding-left: 1.4rem; margin-bottom: 0.8rem; }
+  li { margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-family: sans-serif; font-size: 13px; }
+  th { background: #1a1a2e; color: #e8e0d0; padding: 8px 12px; text-align: left; }
+  td { padding: 7px 12px; border-bottom: 1px solid #e0d8c8; }
+  tr:nth-child(even) td { background: #f8f4ec; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-family: sans-serif; font-weight: 600; margin: 2px; }
+  .badge-blue { background: #dce8f8; color: #1a3a70; }
+  .badge-green { background: #dceee0; color: #0a3a1a; }
+  .badge-amber { background: #fdeeda; color: #4a2800; }
+  .badge-red { background: #fde8e8; color: #4a0000; }
+  .steps { counter-reset: step; }
+  .step { display: flex; gap: 12px; margin: 10px 0; align-items: flex-start; }
+  .step-num { background: #1a1a2e; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-family: sans-serif; font-weight: 700; flex-shrink: 0; }
+  .step-content { flex: 1; font-family: sans-serif; font-size: 13px; }
+  .step-title { font-weight: 700; color: #1a1a2e; }
+  .step-detail { color: #444; margin-top: 2px; line-height: 1.5; }
+  /* CM Calculator */
+  .cm-wrap { display: grid; grid-template-columns: 100px 1fr 1fr; gap: 6px; align-items: center; text-align: center; font-family: sans-serif; font-size: 13px; }
+  .cm-input { width: 70px; height: 40px; text-align: center; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }
+  .cm-tp { background: #dff0d8; padding: 6px; border-radius: 4px; }
+  .cm-tn { background: #dff0d8; padding: 6px; border-radius: 4px; }
+  .cm-fp { background: #fde8e8; padding: 6px; border-radius: 4px; }
+  .cm-fn { background: #fde8e8; padding: 6px; border-radius: 4px; }
+  .results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
+  .res-card { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 10px; text-align: center; font-family: sans-serif; }
+  .res-label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+  .res-val { font-size: 22px; font-weight: 700; color: #1a1a2e; }
+  .res-gmean { background: #f0f0ff; }
+  .working { font-family: monospace; font-size: 12px; color: #333; line-height: 2; background: #f8f8ff; border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin-top: 10px; }
+  .past-q { background: #f8f0e8; border: 1px solid #d8b880; border-radius: 8px; padding: 1rem 1.2rem; margin: 10px 0; font-family: sans-serif; font-size: 13px; }
+  .past-q-title { font-weight: 700; color: #5a3000; margin-bottom: 6px; font-size: 13px; }
+  .ans { background: #f0f8f0; padding: 10px; margin-top: 8px; border-radius: 4px; border-left: 3px solid #2a7a4a; }
+  .section-lec { display: inline-block; font-family: sans-serif; font-size: 11px; padding: 3px 10px; border-radius: 10px; margin-bottom: 10px; font-weight: 600; }
+  .overview-table td:first-child { font-weight: 600; }
+  @media (max-width: 600px) { .grid2,.grid3 { grid-template-columns: 1fr; } .results { grid-template-columns: 1fr 1fr; } .panel { padding: 1rem; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>MGT6302 — Management Information Systems</h1>
+  <p>University of Peradeniya · PG Unit · Complete Exam Study Guide · 2025/26</p>
+  <div class="lecturers">
+    <span class="lec-badge lec-a">Mr. Amila Bandara — Weeks 1–5</span>
+    <span class="lec-badge lec-r">Dr. Ruwan Nawarathna — Weeks 6–7 (Weeks 8–10 missing)</span>
+    <span class="lec-badge lec-rj">Mr. Rajiv Weragama — Weeks 11–15</span>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-btn active" onclick="show('overview')">📋 Overview</div>
+  <div class="nav-btn" onclick="show('w1')">W1: MIS Evolution</div>
+  <div class="nav-btn" onclick="show('w2')">W2: Systems</div>
+  <div class="nav-btn" onclick="show('w3')">W3: Industry 4.0</div>
+  <div class="nav-btn" onclick="show('w5')">W5: E-Commerce</div>
+  <div class="nav-btn" onclick="show('w6')">W6: KMS ⭐</div>
+  <div class="nav-btn" onclick="show('w7')">W7: ML &amp; AI ⭐</div>
+  <div class="nav-btn" onclick="show('w11')">W11: Digital/DB</div>
+  <div class="nav-btn" onclick="show('w12')">W12: DBMS</div>
+  <div class="nav-btn" onclick="show('w13')">W13: Adv. DB</div>
+  <div class="nav-btn" onclick="show('w14')">W14: Security</div>
+  <div class="nav-btn" onclick="show('w15')">W15: Trends</div>
+  <div class="nav-btn" onclick="show('calc')">🔢 Calculator</div>
+  <div class="nav-btn" onclick="show('pastpaper')">📝 Past Q&amp;A</div>
+</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div id="overview" class="panel active">
+  <h2>Course Overview &amp; Exam Strategy</h2>
+
+  <div class="warn">
+    <strong>⭐ TOMORROW'S EXAM FOCUS (Dr. Ruwan's 2 questions):</strong> Week 6 (KMS) and Week 7 (ML/Decision Making). These are the most predictable questions. Study these FIRST.
+  </div>
+
+  <div class="card card-blue">
+    <h3>Exam Structure</h3>
+    <p style="font-family:sans-serif;font-size:13px;">6 questions, answer any 5 · 60 marks · 3 hours · 12 marks per question</p>
+    <p style="font-family:sans-serif;font-size:13px;margin-top:6px;">Three lecturers each set 2 questions. Dr. Ruwan's 2 questions come from <strong>Chapter 6 (KMS)</strong> and <strong>Chapter 7 (ML)</strong>.</p>
+  </div>
+
+  <table>
+    <tr><th>Week</th><th>Topic</th><th>Lecturer</th><th>Exam Priority</th></tr>
+    <tr><td>1</td><td>Evolution of MIS</td><td>Mr. Amila</td><td><span class="badge badge-amber">Medium</span></td></tr>
+    <tr><td>2</td><td>Systems Approach to Organizations</td><td>Mr. Amila</td><td><span class="badge badge-amber">Medium</span></td></tr>
+    <tr><td>3</td><td>Industry 4.0 / Smart Products</td><td>Mr. Amila</td><td><span class="badge badge-amber">Medium</span></td></tr>
+    <tr><td>4</td><td><em>MISSING — not covered</em></td><td>Mr. Amila</td><td><span class="badge badge-red">Skip</span></td></tr>
+    <tr><td>5</td><td>E-Commerce</td><td>Mr. Amila</td><td><span class="badge badge-amber">Medium</span></td></tr>
+    <tr><td>6</td><td>Knowledge Management Systems (KMS)</td><td>Dr. Ruwan</td><td><span class="badge badge-red">⭐ HIGH</span></td></tr>
+    <tr><td>7</td><td>ML &amp; AI-powered Decision Making</td><td>Dr. Ruwan</td><td><span class="badge badge-red">⭐ HIGH</span></td></tr>
+    <tr><td>8–10</td><td><em>MISSING — not covered by Dr. Ruwan</em></td><td>Dr. Ruwan</td><td><span class="badge badge-red">Skip</span></td></tr>
+    <tr><td>11</td><td>Digital Transformation &amp; Data Concepts</td><td>Mr. Rajiv</td><td><span class="badge badge-green">High</span></td></tr>
+    <tr><td>12</td><td>DBMS</td><td>Mr. Rajiv</td><td><span class="badge badge-green">High</span></td></tr>
+    <tr><td>13</td><td>Advanced DB Applications</td><td>Mr. Rajiv</td><td><span class="badge badge-amber">Medium</span></td></tr>
+    <tr><td>14</td><td>Cybersecurity / Social Engineering</td><td>Mr. Rajiv</td><td><span class="badge badge-green">High</span></td></tr>
+    <tr><td>15</td><td>New Trends in Digitalization</td><td>Mr. Rajiv</td><td><span class="badge badge-amber">Medium</span></td></tr>
+  </table>
+
+  <h2>Past Paper Question Pattern</h2>
+  <table>
+    <tr><th>2023/24 Q</th><th>Topic</th><th>Marks</th></tr>
+    <tr><td>Q1</td><td>KMS importance + AI in business + LLMs + ML for scenarios</td><td>12</td></tr>
+    <tr><td>Q2</td><td>Industry 4.0 technologies + SMEs in Sri Lanka + ERP employee resistance</td><td>12</td></tr>
+    <tr><td>Q3</td><td>Organizational resiliency + e-commerce modern trends</td><td>12</td></tr>
+    <tr><td>Q4</td><td>Banking ML model + G-mean confusion matrix + web dev (CSS, server scripting)</td><td>12</td></tr>
+    <tr><td>Q5</td><td>XYZ Online Store — database management (cloud vs in-house, ACID, security)</td><td>12</td></tr>
+    <tr><td>Q6</td><td>ABC Corp cybersecurity — phishing/social engineering scenario</td><td>12</td></tr>
+  </table>
+</div>
+
+<!-- ===== WEEK 1 ===== -->
+<div id="w1" class="panel">
+  <span class="section-lec lec-a">Mr. Amila Bandara</span>
+  <h2>Week 1 — Evolution of Management Information Systems</h2>
+
+  <div class="card card-blue">
+    <h3>What is MIS?</h3>
+    <p>MIS = organizational systems that leverage <strong>technology, human resources, and processes</strong> to systematically collect, process, store, and distribute information to support <strong>decision-making and control</strong> in an organization.</p>
+    <div class="mnemonic"><strong>3 pillars of MIS:</strong> Technology + People + Processes → Information → Decisions</div>
+  </div>
+
+  <h3>Historical Evolution</h3>
+  <table>
+    <tr><th>Era</th><th>Development</th></tr>
+    <tr><td>1940s–50s</td><td>Punch card data processing; UNIVAC I (first commercial computer)</td></tr>
+    <tr><td>1960s</td><td>Mainframes; Decision Support Systems (DSS) emerge</td></tr>
+    <tr><td>1970s</td><td>DBMS introduced; more organized data management</td></tr>
+    <tr><td>1980s</td><td>PCs widespread; Microsoft Windows (1983); user-friendly interfaces</td></tr>
+    <tr><td>1990s</td><td>ERP systems (SAP); Internet changes architecture; relational databases</td></tr>
+    <tr><td>2000s</td><td>Cloud computing; mobile technologies; e-commerce business models</td></tr>
+    <tr><td>2010s+</td><td>Big Data; AI/ML integration; IoT; real-time analytics</td></tr>
+  </table>
+
+  <div class="card card-green">
+    <h3>Role of MIS in Organizations</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Streamline operations</strong> — automate routine tasks</li>
+      <li><strong>Decision support</strong> — provide relevant, timely information</li>
+      <li><strong>Strategic planning</strong> — align technology to organizational goals</li>
+      <li><strong>Data security &amp; integrity</strong> — protect organizational data</li>
+      <li><strong>Competitive advantage</strong> — enable faster, better decisions</li>
+    </ul>
+  </div>
+
+  <h3>Case Studies (exam-ready examples)</h3>
+  <div class="grid2">
+    <div class="box box-amber">
+      <div class="box-title">Enron Scandal — MIS Ethics</div>
+      Executives manipulated financial data using MIS. Shows: MIS needs ethical controls, transparency, and governance. Without accountability, MIS can enable fraud.
+    </div>
+    <div class="box box-blue">
+      <div class="box-title">Amazon — MIS for Efficiency</div>
+      Uses MIS for supply chain, inventory management, customer personalization, and logistics. Result: operational excellence and customer satisfaction.
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Healthcare — Electronic Health Records (EHR)</div>
+      MIS manages patient records digitally, enabling accurate diagnoses, treatment optimization, and better patient outcomes.
+    </div>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Current Challenges &amp; Trends</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li>Cybersecurity threats to data privacy</li>
+      <li>AI and Machine Learning integration for better analytics</li>
+      <li>Mobile MIS — anywhere, anytime access</li>
+      <li>IoT and real-time data collection</li>
+      <li>Cloud-based scalable MIS solutions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WEEK 2 ===== -->
+<div id="w2" class="panel">
+  <span class="section-lec lec-a">Mr. Amila Bandara</span>
+  <h2>Week 2 — Systems Approach to Organizations</h2>
+
+  <div class="card card-blue">
+    <h3>What is a System?</h3>
+    <p>A collection of interrelated components working together toward a common goal. Systems thinking views problems through multiple perspectives by examining relationships between elements.</p>
+    <div class="formula">System = INPUTS → TRANSFORMATION PROCESS → OUTPUTS</div>
+  </div>
+
+  <div class="grid2">
+    <div class="box box-blue">
+      <div class="box-title">Open Systems</div>
+      Exchange information, energy, or material with the environment. Have permeable boundaries. Example: Organizations, biological systems.
+    </div>
+    <div class="box box-amber">
+      <div class="box-title">Closed Systems</div>
+      Do not interact with environment. Rigid, impenetrable boundaries. Rare in practice. Example: Some mechanical systems.
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Open Loop Systems</div>
+      No feedback mechanism. Output does not influence input. Example: A toaster (no temperature sensor).
+    </div>
+    <div class="box box-purple">
+      <div class="box-title">Closed Loop Systems</div>
+      Have feedback. Output is fed back as input to self-correct. Example: Thermostat, air conditioning system.
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Organization as an Open System</h3>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Inputs:</strong> People, money, materials, information from environment<br>
+    <strong>Processes:</strong> Management functions (Planning, Organizing, Leading, Controlling)<br>
+    <strong>Outputs:</strong> Products, services, information back to environment<br>
+    <strong>Feedback:</strong> Customer satisfaction, market data → adjusts processes</p>
+    <div class="mnemonic"><strong>Org Sub-systems:</strong> Accounting · Marketing · HR · Operations · IT · Finance</div>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Role of Management (Control Mechanism)</h3>
+    <p style="font-family:sans-serif;font-size:13px;">Management acts as the CONTROL MECHANISM of the organizational system.</p>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Planning</strong> — Set objectives and strategies</li>
+      <li><strong>Organizing</strong> — Arrange resources and tasks</li>
+      <li><strong>Leading</strong> — Direct and motivate people</li>
+      <li><strong>Controlling</strong> — Monitor performance, compare to plans, correct deviations</li>
+    </ul>
+    <div class="tip">MIS supports all 4 management functions by providing information at each stage.</div>
+  </div>
+</div>
+
+<!-- ===== WEEK 3 ===== -->
+<div id="w3" class="panel">
+  <span class="section-lec lec-a">Mr. Amila Bandara</span>
+  <h2>Week 3 — Industry 4.0 &amp; Smart Connected Products</h2>
+
+  <div class="card card-blue">
+    <h3>Industry 4.0 — The 4th Industrial Revolution</h3>
+    <p>The digital transformation of manufacturing and business using interconnected smart technologies. Called the "3rd great wave of invention and economic disruption."</p>
+    <div class="mnemonic"><strong>Key I4.0 Technologies (memorize 4):</strong><br>
+    IoT · AI/ML · Big Data &amp; Analytics · Cloud Computing · Robotics/Automation · 3D Printing · Blockchain · Augmented Reality (AR)</div>
+  </div>
+
+  <div class="grid2">
+    <div class="box box-blue">
+      <div class="box-title">Smart Connected Products (Porter &amp; Heppelmann)</div>
+      Products with embedded sensors, software, and connectivity. Capabilities: monitoring, control, optimization, autonomy. Example: Smart thermostat, connected cars, GE Brilliant Factories.
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Impact on Organizations</div>
+      New product capabilities, shifted value chains, new organizational units needed (data analytics, customer success management), IT &amp; R&D integration.
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Industry 4.0 in Sri Lanka (Exam-relevant context)</h3>
+    <div class="tip">The 2023/24 paper asks about SMEs in Sri Lanka adopting I4.0 technologies.</div>
+    <div class="grid2" style="margin-top:8px;">
+      <div class="box box-green">
+        <div class="box-title">Benefits for Sri Lankan SMEs</div>
+        <ul style="font-size:12px;">
+          <li>Reduced operational costs through automation</li>
+          <li>Better quality control</li>
+          <li>Access to global markets via e-commerce</li>
+          <li>Data-driven decision making</li>
+          <li>Improved supply chain management</li>
+        </ul>
+      </div>
+      <div class="box box-red">
+        <div class="box-title">Challenges for Sri Lankan SMEs</div>
+        <ul style="font-size:12px;">
+          <li>High implementation costs</li>
+          <li>Lack of technical skills/expertise</li>
+          <li>Infrastructure limitations</li>
+          <li>Resistance to change from employees</li>
+          <li>Cybersecurity risks</li>
+          <li>Limited awareness of I4.0 benefits</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Organizational Resiliency</h3>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Definition:</strong> An organization's ability to rapidly recover, adapt, and respond effectively to disruptions, crises, or significant environmental changes.</p>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>How emerging tech strengthens resiliency (for developing economies):</strong></p>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Cloud computing</strong> — Remote backup, business continuity during disasters</li>
+      <li><strong>IoT + sensors</strong> — Real-time monitoring of supply chain, early warning systems</li>
+      <li><strong>AI/ML</strong> — Predictive analytics for risk identification before crises hit</li>
+      <li><strong>Big Data</strong> — Better demand forecasting, adaptive planning</li>
+      <li><strong>Digital communication tools</strong> — Remote work continuity (COVID example)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WEEK 5 ===== -->
+<div id="w5" class="panel">
+  <span class="section-lec lec-a">Mr. Amila Bandara</span>
+  <h2>Week 5 — E-Commerce</h2>
+
+  <div class="card card-blue">
+    <h3>What is E-Commerce?</h3>
+    <p>Use of the Internet and Web to transact business — digitally enabled commercial transactions between and among organizations and individuals. Started ~1995.</p>
+  </div>
+
+  <h3>8 Unique Features of E-Commerce (MUST KNOW)</h3>
+  <div class="mnemonic"><strong>Mnemonic: "U Go Under Real Interiors, People Socialize"</strong><br>
+  Ubiquity · Global reach · Universal standards · Richness · Interactivity · Information density · Personalization · Social technology</div>
+
+  <table>
+    <tr><th>#</th><th>Feature</th><th>Meaning + Effect</th></tr>
+    <tr><td>1</td><td>Ubiquity</td><td>Available everywhere, anytime. Creates "marketspace" beyond physical location.</td></tr>
+    <tr><td>2</td><td>Global Reach</td><td>Reaches across national boundaries. Billions of potential customers worldwide.</td></tr>
+    <tr><td>3</td><td>Universal Standards</td><td>One set of Internet standards. Lowers market entry costs and search costs.</td></tr>
+    <tr><td>4</td><td>Richness</td><td>Supports video, audio, text simultaneously. No trade-off between richness and reach.</td></tr>
+    <tr><td>5</td><td>Interactivity</td><td>Two-way communication. Consumer becomes co-participant.</td></tr>
+    <tr><td>6</td><td>Information Density</td><td>More information for all. Enables price transparency and price discrimination.</td></tr>
+    <tr><td>7</td><td>Personalization</td><td>Messages tailored to individual interests, past purchases. Mass customization.</td></tr>
+    <tr><td>8</td><td>Social Technology</td><td>Promotes user-generated content, social networking. Many-to-many communication.</td></tr>
+  </table>
+
+  <h3>Types of E-Commerce</h3>
+  <div class="grid2">
+    <div class="box box-blue"><div class="box-title">B2C</div>Business to Consumer — retail to individual shoppers (Amazon, Daraz)</div>
+    <div class="box box-green"><div class="box-title">B2B</div>Business to Business — sales between companies (wholesale, supply chain)</div>
+    <div class="box box-amber"><div class="box-title">C2C</div>Consumer to Consumer — consumers selling to each other (eBay, Etsy)</div>
+    <div class="box box-purple"><div class="box-title">M-Commerce</div>Mobile commerce — transactions via mobile devices</div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Digital Markets vs. Traditional Markets</h3>
+    <p style="font-family:sans-serif;font-size:13px;">Digital markets reduce: <span class="badge badge-red">Search costs</span> <span class="badge badge-red">Transaction costs</span> <span class="badge badge-red">Menu costs</span> <span class="badge badge-red">Information asymmetry</span></p>
+    <p style="font-family:sans-serif;font-size:13px;">Digital markets enable: <span class="badge badge-green">Dynamic pricing</span> <span class="badge badge-green">Price discrimination</span> <span class="badge badge-green">Market segmentation</span> <span class="badge badge-green">Disintermediation</span></p>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Modern E-Commerce Trends (from past paper options)</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Subscription-based crowdfunding</strong> — Patreon model; recurring payments for creative work</li>
+      <li><strong>Omnichannel retailing</strong> — seamless experience across physical, web, mobile</li>
+      <li><strong>Consumer-influencer relationship</strong> — brands partner with social media influencers</li>
+      <li><strong>NFTs</strong> — digital ownership certificates on blockchain</li>
+      <li><strong>Cryptocurrencies</strong> — digital payment methods using blockchain</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WEEK 6: KMS ===== -->
+<div id="w6" class="panel">
+  <span class="section-lec lec-r" style="background:#3a2d6b;color:#c0b0f0;">Dr. Ruwan Nawarathna ⭐ EXAM FOCUS</span>
+  <h2>Week 6 — Knowledge Management Systems (KMS)</h2>
+
+  <div class="warn">⭐ This is one of Dr. Ruwan's 2 exam questions. Study every section here carefully.</div>
+
+  <div class="card card-purple">
+    <h3>What is a KMS?</h3>
+    <p>An integrated set of processes and technologies used to <strong>capture, store, organize, retrieve, reuse, and create new knowledge</strong> to improve decision-making and organizational performance.</p>
+    <p style="font-family:sans-serif;font-size:13px;color:#444;">Knowledge = economic asset. Without a KMS, critical knowledge walks out the door when employees leave.</p>
+    <div class="tip"><strong>Classic example from lecture:</strong> "John knows everything about the 40-year-old system. He's about to retire." → This knowledge loss is exactly what KMS prevents.</div>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Types of Knowledge</h3>
+    <div class="grid3">
+      <div class="box box-red"><div class="box-title">Tacit Knowledge</div>Experience-based, hard to write down. Leadership skills, intuition, expertise. Most valuable, hardest to capture.</div>
+      <div class="box box-amber"><div class="box-title">Implicit Knowledge</div>Not documented yet but transferable if asked. Exists in people's heads but can be explained.</div>
+      <div class="box box-green"><div class="box-title">Explicit Knowledge</div>Documented and easy to share. Manuals, reports, whitepapers, SOPs. Easiest to manage.</div>
+    </div>
+  </div>
+
+  <div class="card card-blue">
+    <h3>The 5 Components of a KMS</h3>
+    <div class="mnemonic"><strong>Mnemonic: "Can Data Deliver Any Solution?"</strong><br>
+    CMS · DMS · Data Warehouse · AI/ML/LLM · Security/Governance/Visualization</div>
+    <div class="steps" style="margin-top:12px;">
+      <div class="step">
+        <div class="step-num">C</div>
+        <div class="step-content">
+          <div class="step-title">Content Management System (CMS)</div>
+          <div class="step-detail">Creates, manages, and publishes content — web pages, articles, manuals, policies. Example: WordPress, SharePoint.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">D</div>
+        <div class="step-content">
+          <div class="step-title">Document Management System (DMS)</div>
+          <div class="step-detail">Stores and tracks documents with version control, access permissions, and archiving. Example: Google Drive, SharePoint document library.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">D</div>
+        <div class="step-content">
+          <div class="step-title">Data Warehouse</div>
+          <div class="step-detail">Central repository for structured historical data from multiple sources. Uses ETL (Extract, Transform, Load). Supports analytics and reporting.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+          <div class="step-title">AI / ML / LLM Tools</div>
+          <div class="step-detail">Intelligent analysis, pattern recognition, natural language processing, automation. Turns KMS from a storage system into an intelligent assistant.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">S</div>
+        <div class="step-content">
+          <div class="step-title">Security / Governance / Visualization Tools</div>
+          <div class="step-detail">Access controls, compliance enforcement, data privacy. Dashboards and visual reporting to present insights.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Private Hospital KMS Example (from class — apply to exam)</h3>
+    <table>
+      <tr><th>Component</th><th>Hospital Application</th></tr>
+      <tr><td>CMS</td><td>Patient education content, hospital website, medical guidelines, staff policies</td></tr>
+      <tr><td>DMS</td><td>Patient records, lab reports, prescriptions, discharge summaries, staff credentials</td></tr>
+      <tr><td>Data Warehouse</td><td>Historical patient outcomes, financial records, treatment analytics, bed occupancy</td></tr>
+      <tr><td>AI/ML/LLM</td><td>Diagnosis support, patient risk prediction, chatbots for appointment booking/triage</td></tr>
+      <tr><td>Security/Governance</td><td>HIPAA/PDPA compliance, role-based access, privacy dashboards, audit logs</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Knowledge Management Process (3 Stages)</h3>
+    <div class="mnemonic"><strong>"CSS" = Create → Store → Share</strong></div>
+    <div class="grid3" style="margin-top:10px;">
+      <div class="box box-blue"><div class="box-title">1. Knowledge Creation</div>Generating new knowledge through R&D, experience, collaboration, data analysis, communities of practice (CoPs).</div>
+      <div class="box box-green"><div class="box-title">2. Knowledge Storage</div>Saving in databases, wikis, documents, data warehouses. Using IT systems to retain, tag, and organize knowledge.</div>
+      <div class="box box-amber"><div class="box-title">3. Knowledge Sharing</div>Distributing via intranets, AI search, collaboration tools, training, mentoring. Building a knowledge-sharing culture.</div>
+    </div>
+  </div>
+
+  <div class="card card-purple">
+    <h3>Modern AI-powered KMS — Key Points</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li>AI converts KMS from "find a document" → "give me the answer"</li>
+      <li>Becomes a <strong>cognitive layer</strong> on top of enterprise data</li>
+      <li>Uses vector databases + LLM reasoning for intelligent search</li>
+      <li>Multi-agent systems: retrieval agent + analytics agent + compliance agent work together</li>
+    </ul>
+    <h4>Impact on Business/Process Management:</h4>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Faster decisions</strong> — real-time insights from large datasets</li>
+      <li><strong>Task automation</strong> — classification, tagging, report generation, email drafting</li>
+      <li><strong>Personalized recommendations</strong> — for employees and customers</li>
+      <li><strong>Predictive insights</strong> — forecasting trends, risks, and demand</li>
+      <li><strong>Process optimization</strong> — identifying bottlenecks, workflow improvement</li>
+      <li><strong>Better onboarding</strong> — new staff can access all institutional knowledge immediately</li>
+    </ul>
+  </div>
+
+  <div class="card card-blue">
+    <h3>LLMs in Enterprise Knowledge Management</h3>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>LLMs</strong> (Large Language Models) = AI with billions of parameters trained on massive text data. Examples: ChatGPT, Claude, Gemini, Copilot.</p>
+    <div class="grid2" style="margin-top:8px;">
+      <div class="box box-purple"><div class="box-title">Decision Support</div>Summarize reports, extract key insights from long documents, answer Q&A from company databases, translate findings.</div>
+      <div class="box box-blue"><div class="box-title">Task Automation</div>Draft emails/reports, generate code, classify customer queries, create meeting summaries.</div>
+      <div class="box box-green"><div class="box-title">AI Agents</div>Autonomous systems that plan and execute multi-step tasks. Example: research agent that searches, synthesizes, and reports automatically.</div>
+      <div class="box box-amber"><div class="box-title">Knowledge Creation</div>Identify patterns in enterprise data that humans miss, generate hypotheses, support R&D processes.</div>
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <h3>AI Applications in Business</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Business automation</strong> — repetitive tasks, workflow optimization, reducing human error</li>
+      <li><strong>Predictive analytics</strong> — forecast sales, customer churn, equipment failure</li>
+      <li><strong>Customer service</strong> — AI chatbots, 24/7 automated support</li>
+      <li><strong>Fraud detection</strong> — ML algorithms detect unusual transaction patterns</li>
+      <li><strong>Personalization</strong> — recommendation engines (Netflix, Amazon)</li>
+      <li><strong>Supply chain optimization</strong> — demand forecasting, route optimization</li>
+      <li><strong>Healthcare</strong> — medical image analysis, diagnosis support, drug discovery</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WEEK 7: ML ===== -->
+<div id="w7" class="panel">
+  <span class="section-lec lec-r" style="background:#3a2d6b;color:#c0b0f0;">Dr. Ruwan Nawarathna ⭐ EXAM FOCUS</span>
+  <h2>Week 7 — Enhancing Decision Making Through AI-powered MIS</h2>
+
+  <div class="warn">⭐ Dr. Ruwan's second exam question. The confusion matrix calculation is almost certain to appear.</div>
+
+  <div class="card card-blue">
+    <h3>What is a Machine Learning Model?</h3>
+    <p>A computer program that <strong>learns patterns from data</strong> to make predictions or decisions <strong>without being explicitly programmed</strong>. It improves with more data and experience.</p>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Types of ML — Supervised vs Unsupervised</h3>
+    <div class="grid2">
+      <div class="box box-blue">
+        <div class="box-title">Supervised Learning</div>
+        Trained on <strong>labeled data</strong> (each input has a known correct output). Model learns to predict output for new inputs.<br><br>
+        <em>Use cases:</em> Spam detection, credit scoring, disease prediction, customer churn prediction
+      </div>
+      <div class="box box-amber">
+        <div class="box-title">Unsupervised Learning</div>
+        Trained on <strong>unlabeled data</strong>. Model discovers hidden patterns/groups on its own.<br><br>
+        <em>Use cases:</em> Customer segmentation, anomaly detection, topic modeling, market basket analysis
+      </div>
+    </div>
+    <div class="mnemonic">Quick test: Does your training data have correct answers labeled? YES → Supervised. NO → Unsupervised.</div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Classification vs Regression (both are Supervised)</h3>
+    <div class="grid2">
+      <div class="box box-purple">
+        <div class="box-title">Classification</div>
+        Predicts a <strong>category / class</strong> (discrete output)<br><br>
+        Examples: Spam/Not spam · Disease Yes/No · Loan Approved/Rejected · Customer will churn/not churn
+      </div>
+      <div class="box box-teal">
+        <div class="box-title">Regression</div>
+        Predicts a <strong>continuous number</strong> (numeric output)<br><br>
+        Examples: House price · Sales forecast · Temperature · Age
+      </div>
+    </div>
+    <div class="tip"><strong>Quick rule:</strong> Answer is a category/label → Classification. Answer is a number → Regression.</div>
+  </div>
+
+  <div class="card card-amber">
+    <h3>The ML Workflow — 7 Steps</h3>
+    <div class="mnemonic"><strong>"Do People Create Features, Train Every Model?"</strong><br>
+    Define → Prepare → Clean → Features → Train → Evaluate → Model/Deploy</div>
+    <div class="steps" style="margin-top:12px;">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Problem Definition</div><div class="step-detail">What to predict? Classification or regression? Define success metrics. Understand the business objective.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Data Collection</div><div class="step-detail">Gather from databases (SQL/NoSQL), APIs, logs, documents, images, public datasets (e.g., UCI Repository). More quality data = better model.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Data Preprocessing / Cleaning</div><div class="step-detail">Handle missing values (remove or impute), remove duplicates, fix errors, normalize/standardize numeric data, encode categorical variables (one-hot encoding).</div></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Feature Selection / Engineering</div><div class="step-detail">Choose the most relevant input variables. Remove irrelevant or redundant features. Create new features if needed. Use EDA (Exploratory Data Analysis) to understand distributions.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Model Selection &amp; Training</div><div class="step-detail">Choose algorithm (Decision Tree, Naive Bayes, etc. in Weka). Split data: Training set (fit model) + Test set (evaluate). Use cross-validation (k-fold) for better accuracy estimates. Hyperparameter tuning: Grid Search, Random Search.</div></div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">Model Evaluation</div><div class="step-detail">Test on unseen data. Use confusion matrix → Accuracy, Precision, Recall, F1 Score. For regression: MSE, RMSE, MAE.</div></div></div>
+      <div class="step"><div class="step-num">7</div><div class="step-content"><div class="step-title">Deployment &amp; Monitoring</div><div class="step-detail">Deploy model to production. Monitor performance over time. Retrain as new data arrives. Explainability: SHAP, LIME, Feature importance.</div></div></div>
+    </div>
+  </div>
+
+  <div class="card card-purple">
+    <h3>⭐ Confusion Matrix &amp; Metrics — HIGH EXAM PRIORITY</h3>
+    <table>
+      <tr><th></th><th>Predicted: YES (Positive)</th><th>Predicted: NO (Negative)</th></tr>
+      <tr><td><strong>Actual: YES</strong></td><td style="background:#dff0d8;font-weight:700;">TP — True Positive</td><td style="background:#fde8e8;font-weight:700;">FN — False Negative</td></tr>
+      <tr><td><strong>Actual: NO</strong></td><td style="background:#fde8e8;font-weight:700;">FP — False Positive</td><td style="background:#dff0d8;font-weight:700;">TN — True Negative</td></tr>
+    </table>
+    <div class="formula">Accuracy  = (TP + TN) / (TP + TN + FP + FN)  ← "Overall correctness"</div>
+    <div class="formula">Precision = TP / (TP + FP)              ← "Of predicted YES, how many were correct?"</div>
+    <div class="formula">Recall    = TP / (TP + FN)              ← "Of actual YES, how many did we find?"</div>
+    <div class="formula">F1 Score  = 2 × (Precision × Recall) / (Precision + Recall)  ← "Balance of P and R"</div>
+    <div class="formula">Sensitivity = Recall = TP / (TP + FN)</div>
+    <div class="formula">Specificity = TN / (TN + FP)            ← "Of actual NO, how many correctly identified?"</div>
+    <div class="formula">G-Mean    = √(Sensitivity × Specificity)  ← From past paper 2023/24 Q4b!</div>
+    <div class="tip"><strong>Memory trick:</strong> Precision = "predicted positive" denominator (TP+<strong>FP</strong>). Recall = "real positive" denominator (TP+<strong>FN</strong>). TP is ALWAYS the numerator for both.</div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Weka — Exam Context</h3>
+    <table>
+      <tr><th>Aspect</th><th>Details</th></tr>
+      <tr><td>Type</td><td>GUI-based ML software — no coding needed, visual interface</td></tr>
+      <tr><td>Common Classifiers</td><td>J48 (Decision Tree), Naive Bayes, ZeroR, OneR, Random Forest</td></tr>
+      <tr><td>Evaluation Methods</td><td>Percentage split (e.g., 66% train / 34% test) or k-fold Cross-validation</td></tr>
+      <tr><td>Output</td><td>Weka gives confusion matrix directly — read TP, FP, FN, TN from it</td></tr>
+      <tr><td>Preprocessing</td><td>Remove useless attributes, handle missing values before training</td></tr>
+      <tr><td>Common datasets</td><td>UCI Repository — Bank marketing, iris, heart disease</td></tr>
+    </table>
+    <div class="tip">In Weka's confusion matrix: rows = actual class, columns = predicted class. Diagonal values = correct predictions.</div>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Domain Knowledge in ML (from past paper Q1e)</h3>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Why domain knowledge matters in building ML models:</strong></p>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Feature selection</strong> — A doctor knows which symptoms are diagnostically relevant; a data scientist alone may miss this</li>
+      <li><strong>Data interpretation</strong> — Understanding what "normal" looks like (e.g., blood pressure ranges)</li>
+      <li><strong>Avoiding spurious correlations</strong> — Domain experts catch statistically significant but meaningless correlations</li>
+      <li><strong>Model validation</strong> — Experts can judge if predictions make clinical/business sense</li>
+      <li><strong>Feature engineering</strong> — Creating meaningful derived features that a domain expert knows matter</li>
+    </ul>
+    <div class="tip"><strong>Example:</strong> To predict customer churn in telecom, a domain expert knows that "contract type" and "tenure" are more important than "zip code" — even if the data shows a correlation for zip code.</div>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Banking Dataset ML Question (from past paper Q4a)</h3>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Task:</strong> Predict whether a client will subscribe to a term deposit (variable y = yes/no)</p>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Type:</strong> This is <strong>Classification</strong> (binary: yes or no)</p>
+    <div class="steps" style="margin-top:8px;">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Define Problem</div><div class="step-detail">Binary classification. Success metric: Accuracy, Precision, Recall (important if classes imbalanced)</div></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Data (given)</div><div class="step-detail">45,211 instances, 16 features, categorical &amp; integer. Multivariate banking dataset.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Preprocess</div><div class="step-detail">Handle missing values, encode categorical features (job, marital status), normalize age/balance</div></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Select Features</div><div class="step-detail">Use domain knowledge: contact type, duration, campaign calls, previous outcome likely important</div></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Train Model</div><div class="step-detail">Split 70/30. Try J48 Decision Tree or Logistic Regression in Weka. Cross-validate.</div></div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">Evaluate</div><div class="step-detail">Confusion matrix → Accuracy, Precision, Recall, F1. Check for class imbalance.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 11 ===== -->
+<div id="w11" class="panel">
+  <span class="section-lec lec-rj">Mr. Rajiv Weragama</span>
+  <h2>Week 11 — Digital Transformation &amp; Fundamental Data Concepts</h2>
+
+  <div class="card card-blue">
+    <h3>Digital Transformation</h3>
+    <p>Digital is the "3rd great wave of invention and economic disruption." Not just for Silicon Valley — every industry is going digital.</p>
+    <div class="grid3">
+      <div class="box box-blue"><div class="box-title">Digitization</div>Converting analog to digital format. Example: Scanning paper documents to PDF.</div>
+      <div class="box box-green"><div class="box-title">Digitalization</div>Using digital technologies to change/improve business processes. Example: Online booking instead of phone booking.</div>
+      <div class="box box-purple"><div class="box-title">Digital Transformation</div>Full organizational change using digital technologies to create new business models and value. Example: Netflix transforming from DVD rental to streaming.</div>
+    </div>
+    <div class="tip">"Data is the new oil" — organizations that effectively use data gain competitive advantage.</div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Fundamental Data Concepts (hierarchy)</h3>
+    <div class="formula">Character → Field → Record → File/Table → Database</div>
+    <table>
+      <tr><th>Level</th><th>Definition</th><th>Example</th></tr>
+      <tr><td>Character</td><td>Single symbol (letter, number, punctuation)</td><td>'A', '5', '@'</td></tr>
+      <tr><td>Field (data item)</td><td>Grouping of related characters = one attribute</td><td>FirstName = "Amila"</td></tr>
+      <tr><td>Record</td><td>All fields describing one instance of an entity</td><td>One employee's complete record</td></tr>
+      <tr><td>File/Table</td><td>Group of related records in tabular form</td><td>Employee table</td></tr>
+      <tr><td>Database</td><td>Integrated collection of related tables/files</td><td>HR database with Employee, Dept tables</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Database Structures</h3>
+    <table>
+      <tr><th>Structure</th><th>Key Feature</th><th>Notes</th></tr>
+      <tr><td>Hierarchical</td><td>Tree structure, one-to-many relationships</td><td>Early DBMS, limited flexibility</td></tr>
+      <tr><td>Network</td><td>Many-to-many relationships, any element can link to any other</td><td>Used in mainframe systems</td></tr>
+      <tr><td>Relational</td><td>Data in tables (rows=records, columns=fields). Links via shared keys.</td><td>Most widely used today (MySQL, Oracle)</td></tr>
+      <tr><td>Object-oriented</td><td>Data + operations bundled as objects. Inheritance.</td><td>Handles complex data types (graphics)</td></tr>
+      <tr><td>Multidimensional</td><td>Data in cubes. Multiple dimensions.</td><td>Used for OLAP/analytics/data warehousing</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Relational Database Operations</h3>
+    <div class="grid3">
+      <div class="box box-blue"><div class="box-title">Select</div>Create a subset of rows meeting a criterion. Example: SELECT employees WHERE salary > 50,000</div>
+      <div class="box box-green"><div class="box-title">Join</div>Combine two tables that share a common field. Example: Join Employee and Department tables on DeptID.</div>
+      <div class="box box-amber"><div class="box-title">Project</div>Create a subset of columns from a table. Example: Show only Name and Email columns from Employees.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 12 ===== -->
+<div id="w12" class="panel">
+  <span class="section-lec lec-rj">Mr. Rajiv Weragama</span>
+  <h2>Week 12 — Introduction to DBMS</h2>
+
+  <div class="card card-blue">
+    <h3>What is a DBMS?</h3>
+    <p>Sophisticated software that controls and manages a collection of related data, ensuring it can be shared, updated, and retrieved efficiently and securely.</p>
+    <div class="tip"><strong>Database</strong> = the data. <strong>DBMS</strong> = the software that manages it (e.g., MySQL, Oracle, PostgreSQL, Microsoft SQL Server).</div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Advantages of the Database Approach</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li>Encourages data sharing across departments</li>
+      <li>Controls data redundancy (no duplicate data in multiple files)</li>
+      <li>Improves data accuracy and integrity</li>
+      <li>Permits storage of vast data volumes with efficient access</li>
+      <li>Allows database queries (SQL)</li>
+      <li>Controls data security, privacy, backup and recovery</li>
+      <li>Enforces standards (naming, formats)</li>
+    </ul>
+  </div>
+
+  <div class="card card-amber">
+    <h3>ACID Properties — Database Integrity</h3>
+    <div class="mnemonic"><strong>ACID = Atomicity · Consistency · Isolation · Durability</strong></div>
+    <table>
+      <tr><th>Property</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td>Atomicity</td><td>Transaction is all-or-nothing. Either fully completes or fully rolls back.</td><td>Bank transfer: debit AND credit must both succeed, or neither happens.</td></tr>
+      <tr><td>Consistency</td><td>Transaction brings database from one valid state to another. Rules/constraints always satisfied.</td><td>Account balance can't go below 0 after transaction.</td></tr>
+      <tr><td>Isolation</td><td>Concurrent transactions don't interfere with each other.</td><td>Two users booking the last seat simultaneously — one gets it, one gets an error.</td></tr>
+      <tr><td>Durability</td><td>Once committed, transaction persists even if system crashes.</td><td>After "Payment confirmed," the record stays even if server crashes.</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-purple">
+    <h3>Three-Schema Architecture</h3>
+    <div class="grid3">
+      <div class="box box-red"><div class="box-title">External Schema (View Level)</div>What each individual user/application sees. Customized views hiding complexity.</div>
+      <div class="box box-blue"><div class="box-title">Conceptual Schema (Logical Level)</div>Overall structure of the whole database — entities, relationships, constraints. Independent of storage.</div>
+      <div class="box box-green"><div class="box-title">Internal Schema (Physical Level)</div>How data is physically stored on disk — indexes, storage structures, file organization.</div>
+    </div>
+  </div>
+
+  <div class="card card-blue">
+    <h3>DBMS Languages</h3>
+    <div class="grid2">
+      <div class="box box-blue"><div class="box-title">DDL — Data Definition Language</div>Define database structure. CREATE TABLE, ALTER TABLE, DROP TABLE.</div>
+      <div class="box box-green"><div class="box-title">DML — Data Manipulation Language</div>Manipulate data. SELECT, INSERT, UPDATE, DELETE.</div>
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Database Users</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Database Administrator (DBA)</strong> — manages the DBMS, security, backups, user accounts</li>
+      <li><strong>Database Designers</strong> — design the schema</li>
+      <li><strong>End Users</strong> — Casual (occasional queries), Naïve/Parametric (regular transactions), Power users (complex queries)</li>
+      <li><strong>System Analysts &amp; Programmers</strong> — build applications using the database</li>
+    </ul>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Cloud vs In-house Database (from past paper Q5a)</h3>
+    <div class="grid2">
+      <div class="box box-blue">
+        <div class="box-title">Cloud-hosted Database</div>
+        <strong>Advantages:</strong>
+        <ul style="font-size:12px;"><li>Scalable (grow as needed)</li><li>Lower upfront cost (pay-as-you-go)</li><li>Provider handles maintenance/updates</li><li>Built-in disaster recovery</li><li>Access from anywhere</li></ul>
+        <strong>Disadvantages:</strong>
+        <ul style="font-size:12px;"><li>Ongoing subscription cost</li><li>Data sovereignty/privacy concerns</li><li>Dependent on internet connectivity</li><li>Less control over security policies</li></ul>
+      </div>
+      <div class="box box-green">
+        <div class="box-title">In-house Database</div>
+        <strong>Advantages:</strong>
+        <ul style="font-size:12px;"><li>Full control over data and security</li><li>Can customize to specific needs</li><li>No recurring cloud fees</li><li>Data stays on premises</li></ul>
+        <strong>Disadvantages:</strong>
+        <ul style="font-size:12px;"><li>High upfront hardware cost</li><li>Need internal IT expertise</li><li>Harder to scale quickly</li><li>Responsible for own backup/recovery</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 13 ===== -->
+<div id="w13" class="panel">
+  <span class="section-lec lec-rj">Mr. Rajiv Weragama</span>
+  <h2>Week 13 — Advanced Database Applications</h2>
+
+  <div class="card card-blue">
+    <h3>Data-Driven Decision Making</h3>
+    <p>Process of making informed decisions based on analysis and interpretation of data — not intuition alone. Organizations use databases to store data, then analytics to extract insights.</p>
+    <div class="grid3">
+      <div class="box box-blue"><div class="box-title">Retail (Amazon)</div>Customer databases track purchases + browsing. Analytics provides personalized recommendations. Reduces stockouts through demand forecasting.</div>
+      <div class="box box-green"><div class="box-title">Healthcare</div>Patient databases enable evidence-based treatment, identifying trends in patient outcomes, resource allocation.</div>
+      <div class="box box-amber"><div class="box-title">Marketing</div>Customer segmentation based on demographics, purchase history. Targeted campaigns. Better ROI.</div>
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <h3>Data Warehousing &amp; Business Intelligence</h3>
+    <table>
+      <tr><th>Concept</th><th>Explanation</th></tr>
+      <tr><td>Data Warehouse</td><td>Central repository for historical data from multiple operational systems, optimized for analytics (not transactions)</td></tr>
+      <tr><td>ETL</td><td>Extract (from source systems) → Transform (clean, reformat) → Load (into warehouse)</td></tr>
+      <tr><td>OLAP</td><td>Online Analytical Processing — multidimensional analysis, "slice and dice" data cubes</td></tr>
+      <tr><td>Business Intelligence (BI)</td><td>Tools and processes to analyze data and present actionable information to decision-makers</td></tr>
+      <tr><td>Data Mining</td><td>Discovering hidden patterns and relationships in large datasets using ML algorithms</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-amber">
+    <h3>E-Commerce Database Role</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li>Stores product catalogs, customer data, order information, inventory</li>
+      <li>Enables CRM systems — tracking customer interactions and preferences</li>
+      <li>Powers personalization and recommendation engines</li>
+      <li>Manages real-time inventory updates</li>
+      <li>Supports fraud detection through transaction pattern analysis</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WEEK 14 ===== -->
+<div id="w14" class="panel">
+  <span class="section-lec lec-rj">Mr. Rajiv Weragama</span>
+  <h2>Week 14 — Cybersecurity &amp; Social Engineering</h2>
+
+  <div class="card card-red">
+    <h3>What is Cybersecurity?</h3>
+    <p>Protection of information systems (hardware, software, infrastructure), the data on them, and services they provide from <strong>unauthorized access, harm or misuse</strong>.</p>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Social Engineering — EXAM SCENARIO (Q6 past paper)</h3>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Social Engineer</strong> = attacker who uses psychological manipulation to trick people into divulging confidential information or taking harmful actions. Exploits human psychology, not technical vulnerabilities.</p>
+    <h4>6 Psychological Triggers Exploited:</h4>
+    <div class="grid3">
+      <div class="box box-red"><div class="box-title">Authority</div>Pretending to be an executive or IT manager to get compliance.</div>
+      <div class="box box-red"><div class="box-title">Liking</div>Building rapport and friendship before making a request.</div>
+      <div class="box box-red"><div class="box-title">Reciprocation</div>Doing a "favour" first, then asking for something in return.</div>
+      <div class="box box-amber"><div class="box-title">Consistency</div>Getting verbal commitment to a fake policy, then leveraging it.</div>
+      <div class="box box-amber"><div class="box-title">Social Validation</div>Claiming "your colleagues already did this" to build trust.</div>
+      <div class="box box-amber"><div class="box-title">Scarcity</div>Creating urgency ("first 10 people win a prize!").</div>
+    </div>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Phishing — Types</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Email Phishing</strong> — Fake email with malicious link or attachment</li>
+      <li><strong>Vishing</strong> — Voice phishing via phone call</li>
+      <li><strong>Smishing</strong> — SMS phishing with malicious link</li>
+      <li><strong>Spear Phishing</strong> — Targeted at a specific individual with personalized details</li>
+      <li><strong>Whaling</strong> — Targeting senior executives (C-suite)</li>
+    </ul>
+    <h4>Red Flags in Phishing Emails (from past paper Q6c):</h4>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li>Unsolicited "you've won" messages</li>
+      <li>Urgency and pressure to act immediately</li>
+      <li>Request for sensitive personal/financial information</li>
+      <li>Suspicious links (hover to check real URL)</li>
+      <li>Too-good-to-be-true offers</li>
+      <li>Generic greetings ("Dear Customer") or mismatched sender addresses</li>
+    </ul>
+  </div>
+
+  <div class="card card-red">
+    <h3>Types of Malware</h3>
+    <div class="mnemonic"><strong>"Very Sick Trojans Run Wild Rampaging"</strong> = Virus · Spyware · Trojan · Ransomware · Worm · Rootkit</div>
+    <table>
+      <tr><th>Type</th><th>How it works</th></tr>
+      <tr><td>Virus</td><td>Inserts itself into programs; executes when app runs; spreads through files</td></tr>
+      <tr><td>Worm</td><td>Self-replicates and spreads across networks without needing a host program</td></tr>
+      <tr><td>Trojan</td><td>Appears legitimate but contains malicious code; doesn't self-replicate</td></tr>
+      <tr><td>Spyware</td><td>Hides on device, monitors activity, steals passwords/financial data</td></tr>
+      <tr><td>Ransomware</td><td>Encrypts victim's files, demands payment for decryption key</td></tr>
+      <tr><td>Rootkit</td><td>Hides at system level, provides persistent unauthorized access</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-green">
+    <h3>Identity Theft</h3>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li><strong>Financial</strong> — Using stolen identity to take loans, credit cards</li>
+      <li><strong>Medical</strong> — Posing as another to obtain medical care</li>
+      <li><strong>Criminal</strong> — Using another's identity during arrest to avoid record</li>
+    </ul>
+    <h4>Ways information is collected for identity theft:</h4>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li>Hacking into computers/networks</li>
+      <li>Information-gathering malware</li>
+      <li>Searching hard drives of discarded computers</li>
+      <li>Phishing and social engineering</li>
+      <li>Physical theft of documents/mail</li>
+    </ul>
+  </div>
+
+  <div class="card card-blue">
+    <h3>Cybersecurity Measures (for organizations)</h3>
+    <div class="grid2">
+      <div class="box box-blue">
+        <div class="box-title">Technical Measures</div>
+        <ul style="font-size:12px;">
+          <li>Multi-factor authentication (MFA)</li>
+          <li>Encryption (data at rest and in transit)</li>
+          <li>Firewalls and intrusion detection systems</li>
+          <li>Regular security patches and updates</li>
+          <li>Fraud detection using ML algorithms</li>
+          <li>Backups and disaster recovery plans</li>
+        </ul>
+      </div>
+      <div class="box box-green">
+        <div class="box-title">Organizational Measures</div>
+        <ul style="font-size:12px;">
+          <li>Security awareness training for all staff</li>
+          <li>Clear policies for handling sensitive data</li>
+          <li>Strict access controls (principle of least privilege)</li>
+          <li>Regular security audits</li>
+          <li>Incident response plan</li>
+          <li>Culture of trust and open reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEEK 15 ===== -->
+<div id="w15" class="panel">
+  <span class="section-lec lec-rj">Mr. Rajiv Weragama</span>
+  <h2>Week 15 — New Trends in Digitalization</h2>
+
+  <div class="card card-blue">
+    <h3>Digital Economy</h3>
+    <p>Economic activity resulting from billions of online connections among People, Businesses, Data, Devices, and Processes. Backbone = <strong>Hyperconnectivity</strong> (growing interconnectedness).</p>
+    <h4>Impact on Business:</h4>
+    <ul style="font-family:sans-serif;font-size:13px;">
+      <li>Enhanced efficiency — faster decisions, reduced manual work</li>
+      <li>Improved customer experience — personalized, responsive service</li>
+      <li>New business models — subscription, platform, sharing economy</li>
+      <li>Global reach — small businesses access global markets</li>
+    </ul>
+  </div>
+
+  <div class="card card-green">
+    <h3>AI &amp; ML Advancements</h3>
+    <div class="grid2">
+      <div class="box box-purple"><div class="box-title">NLP (Natural Language Processing)</div>AI understanding human language. Recent advances: Transformers (GPT), Sentiment Analysis, Machine Translation, Speech Recognition.</div>
+      <div class="box box-blue"><div class="box-title">Computer Vision</div>AI interpreting visual information. Object detection, facial recognition, medical image analysis, autonomous vehicles.</div>
+    </div>
+  </div>
+
+  <div class="card card-amber">
+    <h3>Smart Cities &amp; IoT</h3>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Smart City</strong> = uses ICT to enhance quality and performance of urban services (transport, energy, safety, governance). Examples: smart traffic management, smart street lighting, connected infrastructure.</p>
+    <p style="font-family:sans-serif;font-size:13px;"><strong>Wearables &amp; IoT</strong> = embedded sensors in clothing/devices (heart rate monitors in shirts, fitness trackers). Collect real-time biometric data for health management.</p>
+  </div>
+</div>
+
+<!-- ===== CALCULATOR ===== -->
+<div id="calc" class="panel">
+  <h2>🔢 Confusion Matrix Calculator</h2>
+  <p style="font-family:sans-serif;font-size:13px;color:#555;">Enter the values from your exam question or Weka output. All metrics calculated automatically including G-Mean from the 2023/24 past paper.</p>
+
+  <div class="card card-purple">
+    <h3>Enter Values</h3>
+    <div class="cm-wrap" style="margin:16px 0;">
+      <div></div>
+      <div style="font-family:sans-serif;font-size:12px;font-weight:700;text-align:center;">Predicted: YES</div>
+      <div style="font-family:sans-serif;font-size:12px;font-weight:700;text-align:center;">Predicted: NO</div>
+      <div style="font-family:sans-serif;font-size:12px;font-weight:700;text-align:right;padding-right:8px;">Actual: YES</div>
+      <div class="cm-tp"><input class="cm-input" id="tp" type="number" value="50" min="0" oninput="calc()"><br><span style="font-size:11px;font-family:sans-serif;">TP</span></div>
+      <div class="cm-fn"><input class="cm-input" id="fn" type="number" value="10" min="0" oninput="calc()"><br><span style="font-size:11px;font-family:sans-serif;">FN</span></div>
+      <div style="font-family:sans-serif;font-size:12px;font-weight:700;text-align:right;padding-right:8px;">Actual: NO</div>
+      <div class="cm-fp"><input class="cm-input" id="fp" type="number" value="5" min="0" oninput="calc()"><br><span style="font-size:11px;font-family:sans-serif;">FP</span></div>
+      <div class="cm-tn"><input class="cm-input" id="tn" type="number" value="35" min="0" oninput="calc()"><br><span style="font-size:11px;font-family:sans-serif;">TN</span></div>
+    </div>
+
+    <div class="results">
+      <div class="res-card"><div class="res-label">Accuracy</div><div class="res-val" id="r-acc">—</div></div>
+      <div class="res-card"><div class="res-label">Precision</div><div class="res-val" id="r-prec">—</div></div>
+      <div class="res-card"><div class="res-label">Recall / Sensitivity</div><div class="res-val" id="r-rec">—</div></div>
+      <div class="res-card"><div class="res-label">F1 Score</div><div class="res-val" id="r-f1">—</div></div>
+      <div class="res-card"><div class="res-label">Specificity</div><div class="res-val" id="r-spec">—</div></div>
+      <div class="res-card res-gmean"><div class="res-label">G-Mean ⭐</div><div class="res-val" id="r-gm">—</div></div>
+    </div>
+
+    <div class="working" id="working-out"></div>
+  </div>
+
+  <div class="card card-green">
+    <h3>How to Solve in the Exam (step by step)</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Read the matrix carefully</div><div class="step-detail">Rows = Actual, Columns = Predicted. Diagonal = correct predictions. In Weka output, same rule applies.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Label TP, TN, FP, FN</div><div class="step-detail">TP = Actual YES + Predicted YES. TN = Actual NO + Predicted NO. FP = Actual NO but Predicted YES. FN = Actual YES but Predicted NO.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Write the formula FIRST</div><div class="step-detail">Always write the formula before substituting values — shows the examiner you know it.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Substitute and calculate</div><div class="step-detail">Show all working. Round to 2 decimal places.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Interpret the result</div><div class="step-detail">State what it means: "Precision of 0.91 means 91% of positive predictions were correct."</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAST PAPER Q&A ===== -->
+<div id="pastpaper" class="panel">
+  <h2>📝 Past Paper Questions &amp; Model Answers</h2>
+  <p style="font-family:sans-serif;font-size:13px;color:#555;">Based on the 2023/24 paper. These patterns are very likely to repeat.</p>
+
+  <div class="past-q">
+    <div class="past-q-title">Q1a (2 marks) — Importance of KMS in preventing knowledge loss</div>
+    <div class="ans">KMS prevents <strong>knowledge loss</strong> when experienced employees retire or leave. It captures tacit and explicit knowledge in digital systems, ensuring institutional memory is preserved. Example: A retiring engineer's 40-year knowledge of legacy systems is documented in the KMS so successors can access it, preventing operational disruption.</div>
+  </div>
+
+  <div class="past-q">
+    <div class="past-q-title">Q1b (2 marks) — Four applications of AI in business</div>
+    <div class="ans">
+      1. <strong>Business automation</strong> — AI agents automate repetitive tasks (invoicing, data entry)<br>
+      2. <strong>Predictive analytics</strong> — Forecast demand, detect fraud, predict customer churn<br>
+      3. <strong>Personalization</strong> — AI recommendation engines (Amazon, Netflix)<br>
+      4. <strong>Customer service</strong> — AI chatbots providing 24/7 automated support
+    </div>
+  </div>
+
+  <div class="past-q">
+    <div class="past-q-title">Q1c (2 marks each) — Design AI-powered system for: (1) Inventory Optimization in Retail, (2) Customer Churn Prediction in Telecom</div>
+    <div class="ans">
+      <strong>Inventory Optimization:</strong><br>
+      • Data Warehouse stores historical sales, supplier data, seasonal patterns<br>
+      • ML regression model predicts demand for each product<br>
+      • AI agent automatically triggers reorder when stock falls below predicted threshold<br>
+      • Dashboard visualizes stock levels and forecasts in real time<br><br>
+      <strong>Customer Churn Prediction (Classification problem):</strong><br>
+      • DMS collects call records, billing history, customer complaints, contract details<br>
+      • ML classification model (e.g., Decision Tree) predicts churn probability for each customer<br>
+      • CRM system flags high-risk customers<br>
+      • Retention team receives automated alerts to offer targeted promotions
+    </div>
+  </div>
+
+  <div class="past-q">
+    <div class="past-q-title">Q1d (2 marks) — LLMs in enterprise knowledge management</div>
+    <div class="ans">
+      LLMs (Large Language Models) enhance KMS by: (1) <strong>Intelligent search</strong> — instead of keyword matching, LLMs understand context and return precise answers from company documents; (2) <strong>Automated summarization</strong> — LLMs condense lengthy reports into key insights; (3) <strong>Knowledge creation</strong> — draft policies, training materials; (4) <strong>Conversational interfaces</strong> — employees ask questions in natural language to access institutional knowledge.
+    </div>
+  </div>
+
+  <div class="past-q">
+    <div class="past-q-title">Q1e (2 marks) — Domain knowledge importance in ML models</div>
+    <div class="ans">
+      Domain knowledge is critical because: A data scientist alone may not know which features are diagnostically significant. Example: In a medical ML model predicting heart disease, a cardiologist knows that "chest pain type" and "cholesterol level" are far more important than "patient ID" or "zip code." Without domain knowledge, the model may select spurious correlations, leading to poor predictions. Domain experts also validate whether the model's predictions make real-world sense.
+    </div>
+  </div>
+
+  <div class="past-q">
+    <div class="past-q-title">Q4a (3 marks) — Banking dataset: build an ML model to predict term deposit subscription</div>
+    <div class="ans">
+      This is a <strong>supervised binary classification</strong> problem (y = yes/no).<br>
+      <strong>Step 1 — Problem Definition:</strong> Predict whether client subscribes (binary output). Success metrics: Accuracy, Precision, Recall.<br>
+      <strong>Step 2 — Data:</strong> 45,211 instances, 16 features (age, job, balance, contact type, etc.)<br>
+      <strong>Step 3 — Preprocessing:</strong> Encode categorical variables (job, marital), normalize numeric features (age, balance), handle missing values.<br>
+      <strong>Step 4 — Feature Selection:</strong> Domain knowledge: call duration, previous contact outcome, account balance likely most predictive.<br>
+      <strong>Step 5 — Training:</strong> Use Weka. Split 70% train / 30% test. Try J48 Decision Tree or Naive Bayes. Cross-validate (10-fold).<br>
+      <strong>Step 6 — Evaluation:</strong> Read confusion matrix from Weka. Calculate Accuracy, Precision, Recall, F1.
+    </div>
+  </div>
+
+  <div class="past-q">
+    <div class="past-q-title">Q4b (3 marks) — G-Mean calculation from classification result table (15 sentences)</div>
+    <div class="ans">
+      <strong>From the table:</strong> Actual: P P N P P P N P N P N N P P P | Predicted: P P P P P P P P P P P P P P P<br><br>
+      Count: TP=10 (actual P, predicted P), FN=0, FP=5 (actual N, predicted P), TN=0<br><br>
+      <strong>Sensitivity (Recall)</strong> = TP/(TP+FN) = 10/10 = 1.00<br>
+      <strong>Specificity</strong> = TN/(TN+FP) = 0/(0+5) = 0.00<br>
+      <strong>G-Mean</strong> = √(1.00 × 0.00) = √0 = <strong>0.00</strong><br><br>
+      <em>Note: A G-Mean of 0 indicates the model never predicts negative class — it always predicts P. This reveals severe class imbalance handling failure.</em>
+    </div>
+  </div>
+
+  <div class="past-q">
+    <div class="past-q-title">Q6 (2 marks each) — ABC Corp Phishing Scenario</div>
+    <div class="ans">
+      <strong>a. Social engineer &amp; psychological manipulation:</strong> A social engineer is a cybercriminal who exploits human psychology rather than technical vulnerabilities. In the ABC case, the attacker used <em>authority</em> (corporate branding) and <em>excitement/greed</em> (prize of $1M) to bypass the employee's critical thinking, making them act without verifying.<br><br>
+      <strong>b. Steps to verify email legitimacy:</strong> (1) Contact company directly using official numbers (not numbers in the email); (2) Check sender email address carefully for spoofing; (3) Hover over links to see real destination URL; (4) Consult IT security team before clicking.<br><br>
+      <strong>c. Three red flags:</strong> (1) Unsolicited prize notification — company-sponsored contest employee never entered; (2) Request for sensitive personal data (NIC, bank account) through a form; (3) Link redirects to unfamiliar/unofficial website even if it appears legitimate.<br><br>
+      <strong>d. Consequences:</strong> Employee: identity theft, financial fraud, personal distress, reputation damage. ABC Corp: corporate espionage (stolen internal documents), reputational damage, regulatory penalties, financial losses, loss of client trust.<br><br>
+      <strong>e. Organizational policies:</strong> Regular security awareness training; mandatory email verification procedures; multi-factor authentication; strict access controls; incident reporting culture.<br><br>
+      <strong>f. Malware types:</strong> Malware = malicious software designed to damage or gain unauthorized access. Types: Virus (inserts into programs), Worm (self-replicates across networks), Ransomware (encrypts files, demands payment).
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const ids = ['overview','w1','w2','w3','w5','w6','w7','w11','w12','w13','w14','w15','calc','pastpaper'];
+  const idx = ids.indexOf(id);
+  if (idx >= 0) document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function calc() {
+  const tp = parseFloat(document.getElementById('tp').value)||0;
+  const fn = parseFloat(document.getElementById('fn').value)||0;
+  const fp = parseFloat(document.getElementById('fp').value)||0;
+  const tn = parseFloat(document.getElementById('tn').value)||0;
+  const total = tp+fn+fp+tn;
+  if (!total) return;
+  const acc = (tp+tn)/total;
+  const prec = (tp+fp)>0 ? tp/(tp+fp) : 0;
+  const rec = (tp+fn)>0 ? tp/(tp+fn) : 0;
+  const spec = (tn+fp)>0 ? tn/(tn+fp) : 0;
+  const f1 = (prec+rec)>0 ? 2*prec*rec/(prec+rec) : 0;
+  const gm = Math.sqrt(rec*spec);
+  document.getElementById('r-acc').textContent = acc.toFixed(2);
+  document.getElementById('r-prec').textContent = prec.toFixed(2);
+  document.getElementById('r-rec').textContent = rec.toFixed(2);
+  document.getElementById('r-f1').textContent = f1.toFixed(2);
+  document.getElementById('r-spec').textContent = spec.toFixed(2);
+  document.getElementById('r-gm').textContent = gm.toFixed(2);
+  document.getElementById('working-out').innerHTML =
+    `Accuracy  = (${tp}+${tn}) / (${tp}+${tn}+${fp}+${fn}) = ${tp+tn}/${total} = ${acc.toFixed(2)}\n`+
+    `Precision = ${tp} / (${tp}+${fp}) = ${tp}/${tp+fp} = ${prec.toFixed(2)}\n`+
+    `Recall    = ${tp} / (${tp}+${fn}) = ${tp}/${tp+fn} = ${rec.toFixed(2)}\n`+
+    `Specificity = ${tn} / (${tn}+${fp}) = ${tn}/${tn+fp} = ${spec.toFixed(2)}\n`+
+    `F1 Score  = 2 × ${prec.toFixed(2)} × ${rec.toFixed(2)} / (${prec.toFixed(2)}+${rec.toFixed(2)}) = ${f1.toFixed(2)}\n`+
+    `G-Mean    = √(${rec.toFixed(2)} × ${spec.toFixed(2)}) = √${(rec*spec).toFixed(4)} = ${gm.toFixed(2)}`;
+}
+calc();
+</script>
+</body>
+</html>
